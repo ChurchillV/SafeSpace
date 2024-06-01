@@ -18,9 +18,13 @@ function Popup() {
 
   const handleReadText = () => {
     console.log('handleReadText called');
+
+    // Verify chrome exists
     if (typeof chrome !== 'undefined' && chrome.runtime) {
       chrome.runtime.sendMessage({ type: 'GET_TEXT' }, (response) => {
         console.log('Response from background script:', response);
+
+        // If content is loaded, perform AI analysis
         if (response && response.text) {
           const pageText = response.text as string;
           console.log('Page Text:', pageText);
@@ -42,11 +46,13 @@ function Popup() {
     }
   };
 
+  // Obtain word count from page inner text
   const analyzeText = (text: string): string => {
     const wordCount = text.split(/\s+/).length;
     return `Word Count: ${wordCount}`;
   };
 
+  // Analyze text by sending page inner text to Perspective API for analytics 
   const analyzeWithAI = async (text: string): Promise<{ text: string, shouldReport: boolean }> => {
     try {
       const response = await axios.post(
@@ -69,6 +75,7 @@ function Popup() {
       let analysisResult = '';
       let shouldReport = false;
 
+      // Assess analysis scores and assess whether the user must report or not
       for (const [key, value] of Object.entries(attributes)) {
         analysisResult += `${key}: ${value.summaryScore.value.toFixed(2)}\n`;
         if (['TOXICITY', 'INSULT', 'THREAT', 'PROFANITY'].includes(key) && value.summaryScore.value >= 0.3) {
