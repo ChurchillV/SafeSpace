@@ -1,0 +1,33 @@
+.title {
+    font-size: 5em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.tag-line {
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+.analyze-button {
+    padding: 10px;
+    font-weight: bolder;
+    background-color: white;
+    color: #282c34;
+    cursor: pointer;
+    border: none;
+}
+
+.analyze-button:hover {
+    background-color: rgb(242, 242, 242);
+}
+
+.sub-title {
+    text-align: left;
+    margin: 20px;
+}
+
+.insight-section {
+    font-size: 1.6em;
+    margin: 20 20 20 0;
+    text-align: center;
+}

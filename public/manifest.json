@@ -1,0 +1,31 @@
+{
+  "short_name": "SafeSpace",
+  "name": "SafeSpace Browser Extension",
+  "description": "Harnessing AI to tackle Cyberbullying by encouraging users to report it",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Open SafeSpace"
+  },
+  "icons": 
+    {
+      "16": "logo192.png",
+      "48": "logo512.png",
+      "128": "favicon.ico"
+    },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
