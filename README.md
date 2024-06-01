@@ -7,3 +7,16 @@ A web extension leveraging machine learning to battle against cyber bullying
 ![Demonstration of the app](./images/SHOT3.png "SafeSpace in action")
 
 ![Analytics from Perspective API](./images/SHOT4.png)
+
+## Run SAFESPACE locally
+- Pull the project from GitHub
+- Run the code below
+```
+    npm install
+    npm run build
+```
+
+- Head to your Chrome Browser
+- Click on extensions
+- Select **Load Unpacked**
+- Choose the **build** folder of the project directory
