@@ -104,8 +104,4 @@ function Popup() {
   );
 }
 
-function getTextFromPage(): string {
-  return document.body.innerText;
-}
-
 export default Popup;
