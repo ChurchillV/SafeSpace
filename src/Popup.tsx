@@ -55,7 +55,7 @@ function Popup() {
   const analyzeWithAI = async (text: string): Promise<{ text: string, shouldReport: boolean }> => {
     try {
       const response = await axios.post(
-        `https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=${process.env.API_KEY}`,
+        `https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=${process.env.REACT_APP_API_KEY}`,
         {
           comment: { text: text },
           languages: ['en'],
